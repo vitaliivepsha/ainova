@@ -34,4 +34,17 @@ $(function() {
   new Jslider();
   new Fancybox();
 
+  // fixed header
+  var header = $('.header'),
+    scrollPrev = 0;
+
+  $(window).scroll(function() {
+    var scrolled = $(window).scrollTop();
+    if (scrolled > 100) {
+      header.addClass('fixed');
+    } else {
+      header.removeClass('fixed');
+    }
+    scrollPrev = scrolled;
+  });
 });
