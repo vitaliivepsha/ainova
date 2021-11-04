@@ -47,4 +47,18 @@ $(function() {
     }
     scrollPrev = scrolled;
   });
+
+  // custom slider navigation
+
+  $('.custom-nav__slider').each(function() {
+    var $slider = $(this);
+
+    $slider.closest('.custom-nav__slider-wrapper').find('.slider-next').click(function() {
+      $slider.slick('slickNext');
+    });
+
+    $slider.closest('.custom-nav__slider-wrapper').find('.slider-prev').click(function() {
+      $slider.slick('slickPrev');
+    });
+  });
 });
