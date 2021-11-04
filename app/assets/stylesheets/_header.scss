@@ -1,0 +1,10 @@
+.header{
+  height: 114px;
+  transition: linear .2s;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  @include bp(xs){
+    height: 64px;
+  }
+}
