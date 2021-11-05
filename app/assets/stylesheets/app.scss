@@ -71,6 +71,7 @@ svg {
 main {
   flex: 1 0 auto;
   position: relative;
+  z-index: 1;
 }
 
 .section {
