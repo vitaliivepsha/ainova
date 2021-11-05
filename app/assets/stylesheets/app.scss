@@ -3,11 +3,6 @@
 @import "fonts";
 @import "mixin";
 
-
-html {
-  width: 100vw;
-}
-
 body{
   min-width: 320px;
   max-width: 100vw;
@@ -104,12 +99,7 @@ main {
   }
 }
 
-<<<<<<< HEAD
-.overlay {
-  filter: blur(10px);
-=======
 .overlay{
->>>>>>> a4ad8e52dbedc7bba2301cd264c71001bc05e124
   position: fixed;
   left: 0;
   right: 0;
@@ -181,7 +171,6 @@ main {
 @import "bacome-a-partner";
 
 // Main
-<<<<<<< HEAD
 @import "main/section-1";
 @import "main/section-2";
 @import "main/section-3";
@@ -189,17 +178,6 @@ main {
 @import "main/section-5";
 @import "main/section-6";
 @import "main/section-7";
-@import "main/section-8";
-@import "main/section-9";
-=======
-@import 'main/section-1';
-@import 'main/section-2';
-@import 'main/section-3';
-@import 'main/section-4';
-@import 'main/section-5';
-@import 'main/section-6';
-@import 'main/section-7';
->>>>>>> a4ad8e52dbedc7bba2301cd264c71001bc05e124
 
 // Footer
 @import "footer";
