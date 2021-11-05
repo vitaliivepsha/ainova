@@ -61,4 +61,22 @@ $(function() {
       $slider.slick('slickPrev');
     });
   });
+
+  // login menu
+
+  $('.header-login').click(function() {
+    $('body').toggleClass('login-menu__show');
+  });
+
+  $(document).click(function() {
+    $('body').removeClass('login-menu__show');
+  });
+
+  $(document).on('click', '.header-login__menu', function(e) {
+    e.stopPropagation();
+  });
+
+  $(document).on('click', '.header-login', function(e) {
+    e.stopPropagation();
+  });
 });

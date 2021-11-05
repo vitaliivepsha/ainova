@@ -1,5 +1,6 @@
 .world-section{
   padding: 75px 0 35px;
+  overflow-x: hidden;
 }
 
 .world-wrapper{
@@ -116,18 +117,14 @@
   cursor: pointer;
   svg{
     path{
-      fill: $blue;
+      fill: $gold;
     }
   }
   &:hover{
     svg{
       path{
-        fill: $gold;
+        fill: $blue;
       }
     }
   }
-}
-
-.about-section{
-
 }
