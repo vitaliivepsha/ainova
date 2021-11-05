@@ -35,6 +35,51 @@ $(function () {
     new Jslider();
     new Fancybox();
 
+  // fixed header
+  var header = $('.header'),
+    scrollPrev = 0;
+
+  $(window).scroll(function() {
+    var scrolled = $(window).scrollTop();
+    if (scrolled > 100) {
+      header.addClass('fixed');
+    } else {
+      header.removeClass('fixed');
+    }
+    scrollPrev = scrolled;
+  });
+
+  // custom slider navigation
+
+  $('.custom-nav__slider').each(function() {
+    var $slider = $(this);
+
+    $slider.closest('.custom-nav__slider-wrapper').find('.slider-next').click(function() {
+      $slider.slick('slickNext');
+    });
+
+    $slider.closest('.custom-nav__slider-wrapper').find('.slider-prev').click(function() {
+      $slider.slick('slickPrev');
+    });
+  });
+
+  // login menu
+
+  $('.header-login').click(function() {
+    $('body').toggleClass('login-menu__show');
+  });
+
+  $(document).click(function() {
+    $('body').removeClass('login-menu__show');
+  });
+
+  $(document).on('click', '.header-login__menu', function(e) {
+    e.stopPropagation();
+  });
+
+  $(document).on('click', '.header-login', function(e) {
+    e.stopPropagation();
+  });
 });
 
 // video

@@ -1,10 +1,138 @@
 .header{
-  height: 114px;
   transition: linear .2s;
-  display: flex;
-  justify-content: space-between;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-top: 37px;
+  z-index: 100;
   @include bp(xs){
-    height: 64px;
+
+  }
+  &.fixed{
+    margin-top: 10px;
+  }
+}
+
+.header-main{
+  background-color: $blue;
+  width: 100%;
+  height: 85px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  padding: 0 25px;
+  position: relative;
+}
+
+.header-logo{
+  width: 136px;
+  height: 45px;
+  img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.header-menu{
+  display: flex;
+  flex: 1 0 auto;
+  padding-left: 110px;
+  >li{
+    >a{
+      padding: 10px 15px;
+      display: flex;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 163.15%;
+      color: #fff;
+      text-decoration: none;
+      &:hover, &.active{
+        text-decoration: none;
+        color: $gold;
+      }
+    }
+  }
+}
+
+.header-right{
+  display: flex;
+  align-items: center;
+}
+
+.header-lang{
+  position: relative;
+  margin-right: 25px;
+  >div{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    span{
+      color: #fff;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 163.15%;
+      margin-left: 9px;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.header-login{
+  cursor: pointer;
+  display: flex;
+}
+
+.header-login__menu{
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  z-index: -1;
+  transition: linear .3s;
+  transform: translateY(30px);
+}
+
+.header-login__menu-inner{
+  display: flex;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 8px;
+  &.reverse{
+    flex-direction: row-reverse;
+  }
+  >div{
+    width: 50%;
+    height: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+
+.header-login__menu-pic{
+  border-radius: 8px;
+  overflow: hidden;
+  img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.header-login__menu-text{
+  text-align: center;
+  span{
+    display: block;
+    font-size: 30px;
+    line-height: 163.15%;
+    color: #000;
+  }
+  .btn{
+    width: 162px;
+    margin: 22px auto 0;
   }
 }
