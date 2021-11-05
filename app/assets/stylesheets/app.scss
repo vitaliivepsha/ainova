@@ -1,7 +1,12 @@
-@import 'variables';
-@import 'vendor';
-@import 'fonts';
-@import 'mixin';
+@import "variables";
+@import "vendor";
+@import "fonts";
+@import "mixin";
+
+
+html {
+  width: 100vw;
+}
 
 body{
   min-width: 320px;
@@ -18,7 +23,7 @@ body{
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  @include bp(md){
+  @include bp(md) {
     display: block;
   }
   &.swal2-shown {
@@ -38,63 +43,73 @@ body{
   }
 }
 
-ol, ul {
+ol,
+ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
-*, a, .slick-slide{
+*,
+a,
+.slick-slide {
   outline: none;
-  &:focus{
+  &:focus {
     outline: none;
   }
 }
 
-a{
-  transition: .2s linear;
+a {
+  transition: 0.2s linear;
 }
 
-svg{
-  *{
-    transition: linear .2s;
+svg {
+  * {
+    transition: linear 0.2s;
   }
 }
 
-main{
+main {
   flex: 1 0 auto;
   position: relative;
   z-index: 1;
 }
 
-.section{
+.section {
   clear: both;
 }
 
-.container, .row{
-  &:before, &:after{
+.container,
+.row {
+  &:before,
+  &:after {
     display: none;
   }
 }
 
-.container{
+.container {
   width: 1190px;
   max-width: 100%;
-  @include bp(xl){
+  @include bp(xl) {
     width: 1170px;
   }
-  @include bp(lg){
+  @include bp(lg) {
     width: 970px;
   }
-  @include bp(md){
+  @include bp(md) {
     width: 750px;
   }
-  @include bp(sm){
+  @include bp(sm) {
     width: 100%;
   }
 }
 
+<<<<<<< HEAD
+.overlay {
+  filter: blur(10px);
+=======
 .overlay{
+>>>>>>> a4ad8e52dbedc7bba2301cd264c71001bc05e124
   position: fixed;
   left: 0;
   right: 0;
@@ -109,7 +124,7 @@ main{
   transition: linear .3s;
 }
 
-.btn{
+.btn {
   text-decoration: none;
   border: 1px solid $blue;
   padding: 0 10px;
@@ -121,7 +136,7 @@ main{
   text-align: center;
   background-color: $blue;
   cursor: pointer;
-  transition: linear .2s;
+  transition: linear 0.2s;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
@@ -129,25 +144,25 @@ main{
   border-radius: 4px;
   box-shadow: none;
   outline: none !important;
-  &:focus{
+  &:focus {
     text-decoration: none;
     outline: none;
     box-shadow: none;
   }
-  &:hover{
+  &:hover {
     text-decoration: none;
     box-shadow: none;
     background-color: $gold;
     border-color: $gold;
   }
-  svg{
+  svg {
     margin-left: 10px;
   }
-  &.btn-w{
+  &.btn-w {
     background-color: #fff;
     border-color: #fff;
     color: $blue;
-    &:hover{
+    &:hover {
       background-color: $blue;
       border-color: $blue;
       color: #fff;
@@ -162,9 +177,21 @@ main{
 }
 
 // Header
-@import 'header';
+@import "header";
+@import "bacome-a-partner";
 
 // Main
+<<<<<<< HEAD
+@import "main/section-1";
+@import "main/section-2";
+@import "main/section-3";
+@import "main/section-4";
+@import "main/section-5";
+@import "main/section-6";
+@import "main/section-7";
+@import "main/section-8";
+@import "main/section-9";
+=======
 @import 'main/section-1';
 @import 'main/section-2';
 @import 'main/section-3';
@@ -172,9 +199,10 @@ main{
 @import 'main/section-5';
 @import 'main/section-6';
 @import 'main/section-7';
+>>>>>>> a4ad8e52dbedc7bba2301cd264c71001bc05e124
 
 // Footer
-@import 'footer';
+@import "footer";
 
 // Popup
-@import 'popup';
+@import "popup";
