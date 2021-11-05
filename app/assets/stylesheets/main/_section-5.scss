@@ -1,0 +1,28 @@
+.numbers-section{
+  padding: 60px 0;
+}
+
+.numbers-wrapper{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 65px;
+}
+
+.numbers-block{
+  width: 141px;
+  >div{
+    height: 58px;
+  }
+  >p{
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 72px;
+    color: $blue;
+    margin-bottom: 0;
+  }
+  >span{
+    font-size: 30px;
+    line-height: 163.15%;
+    color: $dark-grey;
+  }
+}
