@@ -6,6 +6,11 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 60px;
+  @include bp(xs){
+    min-height: unset;
+    height: auto;
+    margin-bottom: 45px;
+  }
   >img{
     width: 100%;
     height: 100%;
@@ -23,6 +28,12 @@
     display: flex;
     align-items: center;
     height: 100%;
+    @include bp(md){
+      justify-content: center;
+    }
+    @include bp(xs){
+      padding: 30px 15px;
+    }
   }
 }
 
@@ -33,6 +44,9 @@
   width: 466px;
   max-width: 100%;
   padding: 40px 32px 36px 68px;
+  @include bp(xs){
+    padding: 30px;
+  }
 }
 
 .founder-pic{
@@ -55,12 +69,19 @@
   line-height: 33px;
   display: block;
   margin-bottom: 3px;
+  @include bp(xs){
+    font-size: 18px;
+    line-height: 28px;
+  }
 }
 
 .founder-txt{
   font-size: 18px;
   line-height: 163.15%;
   margin-bottom: 15px;
+  @include bp(xs){
+    font-size: 14px;
+  }
 }
 
 .founder-btn{

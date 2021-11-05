@@ -6,13 +6,25 @@
   display: flex;
   align-items: center;
   margin-bottom: 90px;
+  @include bp(md){
+    flex-direction: column;
+  }
+  @include bp(xs){
+    margin-bottom: 50px;
+  }
   &.reverse{
     flex-direction: row-reverse;
+    @include bp(md){
+      flex-direction: column;
+    }
   }
   .col-md-6{
     display: flex;
     align-items: center;
     justify-content: center;
+    @include bp(md){
+      width: 100%;
+    }
   }
 }
 
@@ -20,6 +32,13 @@
   border-radius: 8px;
   overflow: hidden;
   height: 565px;
+  @include bp(md){
+    margin-bottom: 40px;
+  }
+  @include bp(xs){
+    height: calc(100% - 30px);
+    margin-bottom: 25px;
+  }
   img{
     width: 100%;
     height: 100%;
@@ -69,6 +88,13 @@
   font-size: 30px;
   line-height: 163.15%;
   color: #000;
+  @include bp(md){
+    font-size: 26px;
+  }
+  @include bp(xs){
+    font-size: 18px;
+    line-height: 140%;
+  }
 }
 
 .review-name{

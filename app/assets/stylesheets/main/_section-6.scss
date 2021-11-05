@@ -1,14 +1,26 @@
 .vip-section{
   padding: 60px 0 70px;
+  @include bp(md){
+    padding: 45px 0;
+  }
+  @include bp(sm){
+    padding: 30px 0;
+  }
 }
 
 .vip-wrapper{
   display: flex;
   align-items: center;
+  @include bp(md){
+    flex-direction: column;
+  }
   .col-md-6{
     display: flex;
     align-items: center;
     justify-content: center;
+    @include bp(md){
+      max-width: 100%;
+    }
   }
 }
 
@@ -17,6 +29,12 @@
   height: 565px;
   border-radius: 8px;
   overflow: hidden;
+  @include bp(md){
+    margin-bottom: 40px;
+  }
+  @include bp(xs){
+    height: calc(100% - 30px);
+  }
   img{
     width: 100%;
     height: 100%;
@@ -35,6 +53,14 @@
   font-family: $title;
   display: block;
   margin-bottom: 20px;
+  @include bp(md){
+    font-size: 42px;
+    line-height: 62px;
+  }
+  @include bp(xs){
+    font-size: 28px;
+    line-height: 140%;
+  }
 }
 
 .vip-txt{
