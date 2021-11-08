@@ -46,20 +46,32 @@
     <div class="container">
       <div class="subscribe">
         <h2 class="subscribe__title">Anmeldung</h2>
-        <form class="subscribe-form pbz_form clear-styles" action="" data-error-title="Ошибка отправки!">
+        <form class="subscribe-form ajax_form clear-styles" action=""
+              data-error-title="Error!"
+              data-error-message=""
+              data-success-title="Success!"
+              data-success-message="">
           <select class="subscribe-form__gender select" name="gender">
             <option value="frau">Frau</option>
             <option value="herr">Herr</option>
           </select>
           <div class="subscribe-form__name">
-            <input type="text" name="vorname" placeholder="Vorname *" data-validate-required="Обязательное поле">
-            <input type="text" name="nachname" placeholder="Nachname *" data-validate-required="Обязательное поле">
+            <div class="input-wrapper">
+              <input type="text" name="vorname" placeholder="Vorname *" data-title="Vorname" data-validate-required="Required!">
+            </div>
+            <div class="input-wrapper">
+              <input type="text" name="nachname" placeholder="Nachname *" data-title="Nachname" data-validate-required="Required!">
+            </div>
           </div>
-          <input class="subscribe-form__tel phone" type="tel" placeholder="Telefon"
-            data-validate-phone="Неправильный номер">
-          <input class="subscribe-form__email" type="email" name="email" placeholder="E-mail *"
-            data-validate-required="Обязательное поле" data-validate-email="Неправильный email">
-          <input class="subscribe-form__eingelanden" type="text" placeholder="Eingelanden von ">
+          <div class="input-wrapper">
+            <input class="subscribe-form__tel phone" type="tel" placeholder="Telefon" data-title="Telefon">
+          </div>
+          <div class="input-wrapper">
+            <input class="subscribe-form__email" type="email" name="email" placeholder="E-mail *" data-title="Email" data-validate-required="Required!">
+          </div>
+          <div class="input-wrapper">
+            <input class="subscribe-form__eingelanden" type="text" name="eingelanden" placeholder="Eingelanden von "Telefon>
+          </div>
           <button class="subscribe-form__btn btn" type="submit">Absenden</button>
         </form>
       </div>
