@@ -1,0 +1,221 @@
+.event {
+  margin-top: 180px;
+  margin-bottom: 125px;
+  @media (max-width: 1200px) {
+    margin-bottom: 80px;
+  }
+  &__title {
+    margin: 0;
+    margin-bottom: 20px;
+    font-size: 48px;
+    line-height: 65px;
+    font-weight: 700;
+    text-align: center;
+    color: $black;
+
+    @media (max-width: 768px) {
+      font-size: 38px;
+      line-height: 45px;
+    }
+  }
+  &__text {
+    margin: 0;
+    margin: 0 auto;
+    margin-bottom: 60px;
+    max-width: 580px;
+    font-size: 18px;
+    line-height: 29px;
+    font-weight: 400;
+    text-align: center;
+    color: $dark-grey;
+  }
+  &__item {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1050px;
+    margin-bottom: 125px;
+    @media (max-width: 1200px) {
+      justify-content: center;
+    }
+    @media (max-width: 767px) {
+      margin-bottom: 80px;
+    }
+
+    & .event-item {
+      max-width: 497px;
+      @media (max-width: 1200px) {
+        margin-right: 0;
+      }
+      &__img {
+        position: relative;
+        margin-bottom: 35px;
+        border-radius: 8px;
+        overflow: hidden;
+
+        @media (max-width: 540px) {
+          margin-bottom: 20px;
+        }
+
+        & img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+
+        &-text {
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          height: 76px;
+          padding: 0 30px;
+          padding-top: 6px;
+          background-color: $blue;
+          @media (max-width: 540px) {
+            padding-top: 12px;
+          }
+
+          & h3 {
+            margin: 0;
+            font-family: $title;
+            font-size: 22px;
+            line-height: 33px;
+            font-weight: 600;
+            color: #ffffff;
+
+            @media (max-width: 540px) {
+              font-size: 20px;
+              line-height: 28px;
+            }
+
+            @media (max-width: 540px) {
+              font-size: 18px;
+              line-height: 22px;
+            }
+          }
+        }
+      }
+      &__about {
+        &-item {
+          position: relative;
+          margin: 0;
+          margin-bottom: 18px;
+          padding-left: 50px;
+          color: $dark-grey;
+
+          &::before {
+            content: "";
+            position: absolute;
+            left: 2px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 35px;
+            height: 35px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 35px 35px;
+          }
+
+          &.location::before {
+            background-image: url("../images/icons/location.svg");
+          }
+
+          &.date::before {
+            background-image: url("../images/icons/date.svg");
+          }
+
+          &.price::before {
+            background-image: url("../images/icons/ticket.svg");
+          }
+        }
+      }
+    }
+
+    & .event__text-item {
+      margin: 0;
+      margin-top: 55px;
+      max-width: 493px;
+      color: $dark-grey;
+
+      @media (max-width: 767px) {
+        margin-top: 30px;
+      }
+    }
+  }
+
+  .subscribe {
+    max-width: 1020px;
+    margin: 0 auto;
+    &__title {
+      margin: 0;
+      margin-bottom: 45px;
+      font-family: $title;
+      font-size: 22px;
+      line-height: 33px;
+
+      @media (max-width: 1200px) {
+        text-align: center;
+      }
+    }
+
+    & .subscribe-form {
+      max-width: 473px;
+      @media (max-width: 1200px) {
+        margin: 0 auto;
+      }
+
+      &__gender {
+        padding: 16px 0;
+        border: none;
+        border-bottom: 1px solid $medium-grey;
+      }
+      & input {
+        padding: 16px 0;
+        border: none;
+        border-bottom: 1px solid $medium-grey;
+        &::-webkit-input-placeholder {
+          color: $black;
+        }
+        &::-moz-placeholder {
+          color: $black;
+        }
+        &:-moz-placeholder {
+          color: $black;
+        }
+        &:-ms-input-placeholder {
+          color: $black;
+        }
+      }
+
+      &__gender {
+        width: 100%;
+      }
+
+      &__name {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        & input {
+          width: 218px;
+          @media (max-width: 640px) {
+            width: 100%;
+          }
+        }
+      }
+
+      &__tel,
+      &__email,
+      &__eingelanden {
+        width: 100%;
+      }
+
+      &__btn {
+        margin-top: 55px;
+        padding: 16px 45px;
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+  }
+}

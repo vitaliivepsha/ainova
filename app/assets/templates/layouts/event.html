@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Only Good</title>
+  <link rel="icon" href="../../images/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../images/favicon.png" type="image/png">
+  <meta name="theme-color" content="#13468C">
+  <meta name="msapplication-navbutton-color" content="#13468C">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#13468C">
+</head>
+
+<body>
+  ${require('../parts/header.html')}
+  <main class="main event">
+    <h1 class="event__title">Events</h1>
+    <p class="event__text">Gesundheit und Geschäft und Lebensstill</p>
+    <div class="container  event__item">
+      <div class="event-item">
+        <div class="event-item__img">
+          <img src="../../images/events-04.jpg" alt="">
+          <div class="event-item__img-text">
+            <h3>Gesundheit Seminar</h3>
+          </div>
+        </div>
+        <div class="event-item__about">
+          <p class="event-item__about-item location">Theatinerstraße 14 München</p>
+          <p class="event-item__about-item date">23.10.2021 at 10.30 am</p>
+          <p class="event-item__about-item price">Teilnahmegebühr: 50 €</p>
+        </div>
+      </div>
+      <p class="event__text-item">Lassen Sie sich für ein gesünderes und schöneres Leben belohnen. Sie sind es, die
+        Ainovas zu etwas Besonderem machen,
+        und wir möchten etwas zurückgeben - mit kostenlosen Produkten, Rabatten und vielen weiteren Vorteilen. Dies ist
+        ein
+        einzigartiger Club, der Ihnen zum ersten Mal die Kontrolle über Ihr gesundes Leben gibt - und Sie dafür belohnt,
+        dass
+        Sie sich für Sie entschieden haben.
+      </p>
+
+    </div>
+    <div class="container">
+      <div class="subscribe">
+        <h2 class="subscribe__title">Anmeldung</h2>
+        <form class="subscribe-form">
+          <select class="subscribe-form__gender" name="gender">
+            <option value="frau">Frau</option>
+            <option value="herr">Herr</option>
+          </select>
+
+          <div class="subscribe-form__name">
+            <input type="text" placeholder="Vorname *">
+            <input type="text" placeholder="Nachname *">
+          </div>
+          <input class="subscribe-form__tel phone" type="tel" placeholder="Telefon">
+          <input class="subscribe-form__email" type="email" placeholder="E-mail *">
+          <input class="subscribe-form__eingelanden" type="text" placeholder="Eingelanden von ">
+          <button class="subscribe-form__btn btn">Absenden</button>
+        </form>
+      </div>
+    </div>
+
+
+  </main>
+  ${require('../parts/footer.html')}
+
+  <div class="overlay"></div>
+  <div class="mfp-hide"></div>
+
+</body>
+
+</html>

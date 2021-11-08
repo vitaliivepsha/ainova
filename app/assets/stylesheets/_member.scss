@@ -1,0 +1,188 @@
+.member {
+  & .member-main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-end;
+    min-height: 650px;
+    margin-bottom: 60px;
+    padding-bottom: 55px;
+    background-image: url("../images/member-bg.jpg");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+
+    &__link {
+      padding: 16px 36px;
+      background: #fff;
+      border: 1px solid #fff;
+      color: $blue;
+      &:hover {
+        border: 1px solid $gold;
+        background: $gold;
+        color: #fff;
+      }
+    }
+  }
+
+  & .werden {
+    margin-bottom: 130px;
+    & .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__title {
+      margin: 0;
+      margin-bottom: 25px;
+      font-size: 48px;
+      line-height: 65px;
+      font-weight: 800;
+      text-align: center;
+      color: $black;
+
+      @media (max-width: 768px) {
+        font-size: 38px;
+        line-height: 45px;
+      }
+    }
+
+    &__text {
+      margin: 0;
+      margin-bottom: 60px;
+      max-width: 580px;
+      font-size: 18px;
+      line-height: 29px;
+      font-weight: 400;
+      text-align: center;
+      color: $dark-grey;
+    }
+
+    & .advantegs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 825px;
+      margin: 0 auto;
+      gap: 25px;
+
+      & .advantegs-item {
+        position: relative;
+        width: 400px;
+        min-height: 227px;
+        padding: 90px 26px 10px 48px;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.15);
+        @media (max-width: 440px) {
+          width: 100%;
+          padding-left: 30px;
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          left: 45px;
+          top: 20px;
+          width: 50px;
+          height: 50px;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: 50px 50px;
+
+          @media (max-width: 440px) {
+            left: 32px;
+          }
+        }
+
+        &.exclusive::before {
+          background-image: url("../images/icons/tag.svg");
+        }
+
+        &.delivery::before {
+          background-image: url("../images/icons/truck.svg");
+        }
+
+        &.discounts::before {
+          background-image: url("../images/icons/discount-circle.svg");
+        }
+
+        &.ticket::before {
+          background-image: url("../images/icons/ticket.svg");
+        }
+
+        &__title {
+          margin: 0;
+          margin-bottom: 8px;
+          font-family: $title;
+          font-size: 22px;
+          line-height: 33px;
+          font-weight: 600;
+          color: $blue;
+        }
+
+        &__text {
+          margin: 0;
+          color: $dark-grey;
+        }
+      }
+    }
+  }
+
+  & .faq {
+    margin-bottom: 150px;
+    &__title {
+      margin: 0;
+      margin-bottom: 50px;
+      font-size: 48px;
+      line-height: 65px;
+      font-weight: 800;
+      text-align: center;
+      color: $black;
+
+      @media (max-width: 768px) {
+        font-size: 38px;
+        line-height: 45px;
+      }
+    }
+
+    & .faq-item {
+      border-bottom: 1px solid $medium-grey;
+      padding: 17px 0;
+
+      & .faq-item:first-child {
+        border-top: 1px solid $medium-grey;
+      }
+
+      &__title {
+        position: relative;
+        cursor: pointer;
+
+        &::after {
+          content: "";
+          position: absolute;
+          right: 7px;
+          top: calc(50% - 4px);
+          width: 13px;
+          height: 8px;
+          background-image: url("../images/faq-arrow.png");
+          background-repeat: no-repeat;
+          background-position: right center;
+          background-size: 13px 8px;
+          transition: 0.4s;
+        }
+        &.active::after {
+          transform: rotate(180deg);
+          transition: 0.4s;
+        }
+      }
+
+      &__content {
+        margin-top: 10px;
+        color: $dark-grey;
+      }
+    }
+  }
+}
+// ===============

@@ -4,7 +4,7 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-end;
-    height: 650px;
+    min-height: 650px;
     margin-bottom: 60px;
     padding-bottom: 55px;
     background-image: url("../images/parner-bg.jpg");
@@ -303,7 +303,7 @@
   }
 
   & .faq {
-    margin-bottom: 200px;
+    margin-bottom: 150px;
     &__title {
       margin: 0;
       margin-bottom: 50px;
@@ -342,11 +342,12 @@
           background-repeat: no-repeat;
           background-position: right center;
           background-size: 13px 8px;
+          transition: 0.4s;
         }
-      }
-
-      &.active .faq-item__title::after {
-        transform: rotate(180deg);
+        &.active::after {
+          transform: rotate(180deg);
+          transition: 0.4s;
+        }
       }
 
       &__content {
@@ -354,17 +355,6 @@
         color: $dark-grey;
       }
     }
-  }
-
-  .faq__list .faq-item.active {
-    display: block;
-  }
-  .faq__list .faq-item__content {
-    display: none;
-  }
-
-  .faq-item__title.active + .faq-item__content {
-    background: #000;
   }
 
   // ===============

@@ -3,8 +3,12 @@
 'use strict';
 
 if (process.env.NODE_ENV !== 'production') {
-  require('./assets/templates/layouts/index.html');
-  require('./assets/templates/layouts/bacome-a-partner.html');
+    require('./assets/templates/layouts/index.html');
+    require('./assets/templates/layouts/bacome-a-partner.html');
+    require('./assets/templates/layouts/discover.html');
+    require('./assets/templates/layouts/events.html');
+    require('./assets/templates/layouts/event.html');
+    require('./assets/templates/layouts/member.html');
 }
 
 // Depends
@@ -25,65 +29,64 @@ var Fancybox = require('_modules/fancybox');
 require('_stylesheets/app.scss');
 
 // Are you ready?
-$(function() {
-  new Forms();
-  new Popup();
-  new Fancy_select();
-  new Jscrollpane();
-  new LightGallery();
-  new Slider();
-  new Jslider();
-  new Fancybox();
+$(function () {
+    new Forms();
+    new Popup();
+    new Fancy_select();
+    new Jscrollpane();
+    new LightGallery();
+    new Slider();
+    new Jslider();
+    new Fancybox();
 
-  // fixed header
-  var header = $('.header'),
-    scrollPrev = 0;
+    // fixed header
+    var header = $('.header'),
+        scrollPrev = 0;
 
-  $(window).scroll(function() {
-    var scrolled = $(window).scrollTop();
-    if (scrolled > 100) {
-      header.addClass('fixed');
-    } else {
-      header.removeClass('fixed');
-    }
-    scrollPrev = scrolled;
-  });
-
-  // custom slider navigation
-
-  $('.custom-nav__slider').each(function() {
-    var $slider = $(this);
-
-    $slider.closest('.custom-nav__slider-wrapper').find('.slider-next').click(function() {
-      $slider.slick('slickNext');
+    $(window).scroll(function () {
+        var scrolled = $(window).scrollTop();
+        if (scrolled > 100) {
+            header.addClass('fixed');
+        } else {
+            header.removeClass('fixed');
+        }
+        scrollPrev = scrolled;
     });
 
-    $slider.closest('.custom-nav__slider-wrapper').find('.slider-prev').click(function() {
-      $slider.slick('slickPrev');
+    // custom slider navigation
+
+    $('.custom-nav__slider').each(function () {
+        var $slider = $(this);
+
+        $slider.closest('.custom-nav__slider-wrapper').find('.slider-next').click(function () {
+            $slider.slick('slickNext');
+        });
+
+        $slider.closest('.custom-nav__slider-wrapper').find('.slider-prev').click(function () {
+            $slider.slick('slickPrev');
+        });
     });
-  });
 
-  // login menu
+    // login menu
 
-  $('.header-login').click(function() {
-    $('body').toggleClass('login-menu__show');
-  });
+    $('.header-login').click(function () {
+        $('body').toggleClass('login-menu__show');
+    });
 
-  $(document).click(function() {
-    $('body').removeClass('login-menu__show');
-  });
+    $(document).click(function () {
+        $('body').removeClass('login-menu__show');
+    });
 
-  $(document).on('click', '.header-login__menu', function(e) {
-    e.stopPropagation();
-  });
+    $(document).on('click', '.header-login__menu', function (e) {
+        e.stopPropagation();
+    });
 
-  $(document).on('click', '.header-login', function(e) {
-    e.stopPropagation();
-  });
+    $(document).on('click', '.header-login', function (e) {
+        e.stopPropagation();
+    });
 });
 
 // video
-
 // $('.video__inner').click(function () {
 //     $('.video__inner svg').css('display', 'none');
 //     $('.video__inner img').css('display', 'none');
@@ -91,16 +94,12 @@ $(function() {
 
 
 // faq
-
-if ($('.faq__list')) {
-    // открываем вкладку по умолчанию
-  $('.faq__list .faq-item.active .faq-item__content').slideUp();
-    // общий функционал
-  $('.faq__list .faq-item__title').on('click', function() {
-    $('.faq__list .faq-item__content').not($(this).next()).slideUp(300);
-    $('.faq-item').removeClass('active');
-    $(this).next().slideDown(300).parent().addClass('active');
-  });
+if ($(".acc")) {
+    $(".acc .acc__content").css("display", "none");
+    $(".acc .acc__title").click(function () {
+        $(this).toggleClass("active").next().slideToggle();
+        $(".acc .acc__title").not(this).removeClass("active").next().slideUp();
+    });
 }
 
-
+$('.phone').mask('+38(999)-99-99-999');
