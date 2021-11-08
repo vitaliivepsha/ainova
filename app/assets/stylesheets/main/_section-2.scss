@@ -1,16 +1,26 @@
 .world-section{
   padding: 75px 0 35px;
   overflow-x: hidden;
+  @include bp(md){
+    padding-top: 45px;
+  }
 }
 
 .world-wrapper{
   display: flex;
   align-items: center;
+  @include bp(md){
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 .world-info{
   width: 440px;
   flex: 1 0 auto;
+  @include bp(md){
+    max-width: 100%;
+  }
   .btn{
     width: 187px;
   }
@@ -24,6 +34,14 @@
   font-weight: 700;
   margin-top: 0;
   margin-bottom: 18px;
+  @include bp(md){
+    font-size: 42px;
+    line-height: 62px;
+  }
+  @include bp(xs){
+    font-size: 28px;
+    line-height: 140%;
+  }
 }
 
 .world-txt{
@@ -36,9 +54,16 @@
 .world-slider__wrapper{
   width: 1340px;
   flex: 1 0 auto;
+  @include bp(md){
+    width: 100%;
+    flex: auto;
+  }
 }
 
 .world-slider{
+  @include bp(md){
+    margin: 0 -25px;
+  }
   .slick-list{
     padding: 45px 10px;
   }

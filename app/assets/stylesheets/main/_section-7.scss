@@ -1,5 +1,11 @@
 .partners-section{
   padding: 70px 0 145px;
+  @include bp(md){
+    padding: 45px 0 70px;
+  }
+  @include bp(sm){
+    padding: 20px 0 50px;
+  }
 }
 
 .partners-wrapper{
@@ -7,14 +13,37 @@
   border-radius: 8px;
   min-height: 342px;
   overflow: hidden;
+  @include bp(sm){
+    flex-direction: column;
+  }
   >div{
     width: 50%;
+    @include bp(sm){
+      width: 100%;
+      min-height: 342px;
+    }
+    &.partners-txt{
+      background-color: $beige;
+      padding: 55px 57px;
+      @include bp(xs){
+        padding: 30px;
+        min-height: unset;
+      }
+    }
+    &.partners-pic{
+      position: relative;
+      @include bp(xs){
+        min-height: unset;
+        height: calc(100vw - 30px);
+      }
+      img{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
   }
-}
-
-.partners-txt{
-  background-color: $beige;
-  padding: 55px 57px;
 }
 
 .partners-title{
@@ -23,18 +52,11 @@
   line-height: 163.15%;
   color: #000;
   margin-bottom: 30px;
+  @include bp(xs){
+    font-size: 22px;
+  }
 }
 
 .partners-btn{
   width: 214px;
-}
-
-.partners-pic{
-  position: relative;
-  img{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
 }

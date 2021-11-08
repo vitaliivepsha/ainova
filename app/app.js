@@ -69,19 +69,68 @@ $(function () {
 
     // login menu
 
+
+    // $('.header-login').click(function () {
+    //     $('body').toggleClass('login-menu__show');
+    // });
+
+    // $(document).click(function () {
+    //     $('body').removeClass('login-menu__show');
+    // });
+
     $('.header-login').click(function () {
-        $('body').toggleClass('login-menu__show');
+        $('body').toggleClass('login-menu__show').removeClass('menu-opened');
+        $('.mobile-menu__btn').removeClass('active');
     });
 
     $(document).click(function () {
-        $('body').removeClass('login-menu__show');
+        $('body').removeClass('login-menu__show').removeClass('menu-opened');
+        $('.mobile-menu__btn').removeClass('active');
     });
+
 
     $(document).on('click', '.header-login__menu', function (e) {
         e.stopPropagation();
     });
 
+
+    // $(document).on('click', '.header-login', function (e) {
+    //     e.stopPropagation();
+    // });
+
     $(document).on('click', '.header-login', function (e) {
+        e.stopPropagation();
+    });
+
+    // mobile menu
+
+    var touch = $('.mobile-menu__btn');
+
+    var toggles = document.querySelectorAll('.mobile-menu__btn');
+
+    for (var i = toggles.length - 1; i >= 0; i--) {
+        var toggle = toggles[i];
+        toggleHandler(toggle);
+    }
+
+    function toggleHandler(toggle) {
+        toggle.addEventListener('click', function (e) {
+            e.preventDefault();
+            (this.classList.contains('active') === true) ? this.classList.remove('active') : this.classList.add('active');
+        });
+    }
+
+    $(touch).click(function (e) {
+        e.preventDefault();
+        $('body').toggleClass('menu-opened').removeClass('login-menu__show');
+        return false;
+    });
+
+    $(document).on('click', '.mobile-menu__btn', function (e) {
+        e.stopPropagation();
+    });
+
+    $(document).on('click', '.mobile-menu__wrapper', function (e) {
         e.stopPropagation();
     });
 });

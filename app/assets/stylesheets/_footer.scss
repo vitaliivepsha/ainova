@@ -5,14 +5,29 @@
   color: #fff;
   position: relative;
   z-index: 1;
+  @include bp(sm){
+    padding: 35px 0 25px;
+  }
 }
 
 .footer-wrapper{
   display: flex;
+  @include bp(lg){
+    flex-wrap: wrap;
+  }
 }
 
 .footer-left{
   flex: 1 0 auto;
+  @include bp(lg){
+    width: 100%;
+  }
+  @include bp(md){
+    order: 1;
+    width: auto;
+    flex: 0 1 auto;
+    min-width: 55%;
+  }
 }
 
 .footer-logo{
@@ -35,9 +50,25 @@
 .footer-mid{
   display: flex;
   padding-top: 17px;
+  @include bp(md){
+    width: 100%;
+    order: 3;
+    margin-top: 13px;
+  }
+  @include bp(sm){
+    order: 2;
+  }
+  @include bp(xs){
+    flex-direction: column;
+  }
   >div{
     width: 198px;
     padding-right: 30px;
+    @include bp(xs){
+      width: 230px;
+      max-width: 100%;
+      padding-right: 0;
+    }
     span{
       display: block;
       margin-bottom: 20px;
@@ -68,6 +99,18 @@
 .footer-right{
   padding-top: 17px;
   width: 268px;
+  @include bp(lg){
+    flex: 1 0 auto;
+  }
+  @include bp(md){
+    padding-top: 0;
+    order: 2;
+    flex: 1 0 auto;
+  }
+  @include bp(sm){
+    padding-top: 20px;
+    order: 3;
+  }
   >span{
     display: block;
     margin-bottom: 20px;
@@ -138,4 +181,7 @@
   font-size: 14px;
   line-height: 21px;
   color: $dark-grey;
+  @include bp(sm){
+    padding-top: 40px;
+  }
 }
