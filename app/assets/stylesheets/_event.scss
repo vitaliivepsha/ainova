@@ -217,5 +217,61 @@
         line-height: 24px;
       }
     }
+
+    .SumoSelect {
+      width: 100%;
+      border: none;
+
+      & .SelectBox {
+        padding: 16px 0;
+        border: none;
+        border-bottom: 1px solid #bbc8d4;
+        border-radius: 0;
+        box-shadow: none;
+
+        & span {
+          cursor: pointer;
+        }
+      }
+      &.open .SelectBox {
+        border-bottom: 1px solid transparent;
+        cursor: pointer;
+      }
+
+      & label i {
+        background-image: url("../images/icons/arrow-select.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 12px 8px;
+        cursor: pointer;
+      }
+
+      &.open label i {
+        transform: rotate(180deg);
+      }
+
+      & .optWrapper {
+        margin-top: 26px;
+        padding: 0;
+        border-radius: none;
+        box-shadow: 0 3px 3px $medium-grey;
+
+        @media (max-width: 400px) {
+          margin-top: 270px;
+        }
+
+        & .opt:hover {
+          color: #fff;
+          background-color: #13468c !important;
+        }
+
+        & .options label {
+          font-weight: 400;
+          padding: 0;
+          padding-left: 10px;
+          margin-bottom: 0;
+        }
+      }
+    }
   }
 }
