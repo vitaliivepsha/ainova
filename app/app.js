@@ -24,6 +24,7 @@ var Jscrollpane = require('_modules/jscrollpane');
 var LightGallery = require('_modules/lightgallery');
 var Jslider = require('_modules/jslider');
 var Fancybox = require('_modules/fancybox');
+require('../node_modules/sumoselect/jquery.sumoselect.min.js');
 
 // Stylesheet entrypoint
 require('_stylesheets/app.scss');
@@ -67,17 +68,6 @@ $(function () {
         });
     });
 
-    // login menu
-
-
-    // $('.header-login').click(function () {
-    //     $('body').toggleClass('login-menu__show');
-    // });
-
-    // $(document).click(function () {
-    //     $('body').removeClass('login-menu__show');
-    // });
-
     $('.header-login').click(function () {
         $('body').toggleClass('login-menu__show').removeClass('menu-opened');
         $('.mobile-menu__btn').removeClass('active');
@@ -92,11 +82,6 @@ $(function () {
     $(document).on('click', '.header-login__menu', function (e) {
         e.stopPropagation();
     });
-
-
-    // $(document).on('click', '.header-login', function (e) {
-    //     e.stopPropagation();
-    // });
 
     $(document).on('click', '.header-login', function (e) {
         e.stopPropagation();
@@ -133,6 +118,10 @@ $(function () {
     $(document).on('click', '.mobile-menu__wrapper', function (e) {
         e.stopPropagation();
     });
+
+    // select
+
+    $('.select').SumoSelect();
 });
 
 // video

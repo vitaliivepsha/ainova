@@ -53,7 +53,10 @@
       display: none;
     }
     &.logo-mobile{
-      display: block;
+      display: none;
+      @include bp(xs){
+        display: block;
+      }
     }
   }
 }
