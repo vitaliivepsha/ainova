@@ -9,7 +9,11 @@ if (process.env.NODE_ENV !== 'production') {
     require('./assets/templates/layouts/events.html');
     require('./assets/templates/layouts/event.html');
     require('./assets/templates/layouts/member.html');
+<<<<<<< HEAD
     require('./assets/templates/layouts/blog.html');
+=======
+    require('./assets/templates/layouts/article.html');
+>>>>>>> b0b9c9c2a75e0cb624f5570bb7bd3fef0ad45260
 }
 
 // Depends
