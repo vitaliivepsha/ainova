@@ -3,12 +3,12 @@
 'use strict';
 
 if (process.env.NODE_ENV !== 'production') {
-    require('./assets/templates/layouts/index.html');
-    require('./assets/templates/layouts/bacome-a-partner.html');
-    require('./assets/templates/layouts/discover.html');
-    require('./assets/templates/layouts/events.html');
-    require('./assets/templates/layouts/event.html');
-    require('./assets/templates/layouts/member.html');
+  require('./assets/templates/layouts/index.html');
+  require('./assets/templates/layouts/bacome-a-partner.html');
+  require('./assets/templates/layouts/discover.html');
+  require('./assets/templates/layouts/events.html');
+  require('./assets/templates/layouts/event.html');
+  require('./assets/templates/layouts/member.html');
 }
 
 // Depends
@@ -30,98 +30,106 @@ require('../node_modules/sumoselect/jquery.sumoselect.min.js');
 require('_stylesheets/app.scss');
 
 // Are you ready?
-$(function () {
-    new Forms();
-    new Popup();
-    new Fancy_select();
-    new Jscrollpane();
-    new LightGallery();
-    new Slider();
-    new Jslider();
-    new Fancybox();
+$(function() {
+  new Forms();
+  new Popup();
+  new Fancy_select();
+  new Jscrollpane();
+  new LightGallery();
+  new Slider();
+  new Jslider();
+  new Fancybox();
 
     // fixed header
-    var header = $('.header'),
-        scrollPrev = 0;
+  var header = $('.header'),
+    scrollPrev = 0;
 
-    $(window).scroll(function () {
-        var scrolled = $(window).scrollTop();
-        if (scrolled > 100) {
-            header.addClass('fixed');
-        } else {
-            header.removeClass('fixed');
-        }
-        scrollPrev = scrolled;
-    });
+  $(window).scroll(function() {
+    var scrolled = $(window).scrollTop();
+    if (scrolled > 100) {
+      header.addClass('fixed');
+    } else {
+      header.removeClass('fixed');
+    }
+    scrollPrev = scrolled;
+  });
 
     // custom slider navigation
 
-    $('.custom-nav__slider').each(function () {
-        var $slider = $(this);
+  $('.custom-nav__slider').each(function() {
+    var $slider = $(this);
 
-        $slider.closest('.custom-nav__slider-wrapper').find('.slider-next').click(function () {
-            $slider.slick('slickNext');
-        });
-
-        $slider.closest('.custom-nav__slider-wrapper').find('.slider-prev').click(function () {
-            $slider.slick('slickPrev');
-        });
+    $slider.closest('.custom-nav__slider-wrapper').find('.slider-next').click(function() {
+      $slider.slick('slickNext');
     });
 
-    $('.header-login').click(function () {
-        $('body').toggleClass('login-menu__show').removeClass('menu-opened');
-        $('.mobile-menu__btn').removeClass('active');
+    $slider.closest('.custom-nav__slider-wrapper').find('.slider-prev').click(function() {
+      $slider.slick('slickPrev');
     });
+  });
 
-    $(document).click(function () {
-        $('body').removeClass('login-menu__show').removeClass('menu-opened');
-        $('.mobile-menu__btn').removeClass('active');
-    });
+  $('.header-login').click(function() {
+    $('body').toggleClass('login-menu__show').removeClass('menu-opened');
+    $('.mobile-menu__btn').removeClass('active');
+  });
+
+  $(document).click(function() {
+    $('body').removeClass('login-menu__show').removeClass('menu-opened');
+    $('.mobile-menu__btn').removeClass('active');
+  });
 
 
-    $(document).on('click', '.header-login__menu', function (e) {
-        e.stopPropagation();
-    });
+  $(document).on('click', '.header-login__menu', function(e) {
+    e.stopPropagation();
+  });
 
-    $(document).on('click', '.header-login', function (e) {
-        e.stopPropagation();
-    });
+  $(document).on('click', '.header-login', function(e) {
+    e.stopPropagation();
+  });
 
     // mobile menu
 
-    var touch = $('.mobile-menu__btn');
+  var touch = $('.mobile-menu__btn');
 
-    var toggles = document.querySelectorAll('.mobile-menu__btn');
+  var toggles = document.querySelectorAll('.mobile-menu__btn');
 
-    for (var i = toggles.length - 1; i >= 0; i--) {
-        var toggle = toggles[i];
-        toggleHandler(toggle);
-    }
+  for (var i = toggles.length - 1; i >= 0; i--) {
+    var toggle = toggles[i];
+    toggleHandler(toggle);
+  }
 
-    function toggleHandler(toggle) {
-        toggle.addEventListener('click', function (e) {
-            e.preventDefault();
-            (this.classList.contains('active') === true) ? this.classList.remove('active') : this.classList.add('active');
-        });
-    }
-
-    $(touch).click(function (e) {
-        e.preventDefault();
-        $('body').toggleClass('menu-opened').removeClass('login-menu__show');
-        return false;
+  function toggleHandler(toggle) {
+    toggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      (this.classList.contains('active') === true) ? this.classList.remove('active') : this.classList.add('active');
     });
+  }
 
-    $(document).on('click', '.mobile-menu__btn', function (e) {
-        e.stopPropagation();
-    });
+  $(touch).click(function(e) {
+    e.preventDefault();
+    $('body').toggleClass('menu-opened').removeClass('login-menu__show');
+    return false;
+  });
 
-    $(document).on('click', '.mobile-menu__wrapper', function (e) {
-        e.stopPropagation();
-    });
+  $(document).on('click', '.mobile-menu__btn', function(e) {
+    e.stopPropagation();
+  });
+
+  $(document).on('click', '.mobile-menu__wrapper', function(e) {
+    e.stopPropagation();
+  });
 
     // select
 
-    $('.select').SumoSelect();
+  $('.select').SumoSelect();
+
+  $('.video__inner').on('click', function(e) {
+    $(this).find('img').hide();
+    $(this).find('svg').hide();
+    $(this).find('iframe').show();
+    $(this).find('iframe')[0].src += '?autoplay=1';
+    e.preventDefault();
+  });
 });
 
 // video
@@ -132,12 +140,12 @@ $(function () {
 
 
 // faq
-if ($(".acc")) {
-    $(".acc .acc__content").css("display", "none");
-    $(".acc .acc__title").click(function () {
-        $(this).toggleClass("active").next().slideToggle();
-        $(".acc .acc__title").not(this).removeClass("active").next().slideUp();
-    });
+if ($('.acc')) {
+  $('.acc .acc__content').css('display', 'none');
+  $('.acc .acc__title').click(function() {
+    $(this).toggleClass('active').next().slideToggle();
+    $('.acc .acc__title').not(this).removeClass('active').next().slideUp();
+  });
 }
 
 $('.phone').mask('+38(999)-99-99-999');
