@@ -180,16 +180,6 @@ main {
 
 // Header
 @import "header";
-@import "bacome-a-partner";
-@import "discover";
-@import "events";
-@import "event";
-@import "member";
-<<<<<<< HEAD
-@import "blog";
-=======
-@import "article";
->>>>>>> b0b9c9c2a75e0cb624f5570bb7bd3fef0ad45260
 
 // Main
 @import "main/section-1";
@@ -205,3 +195,12 @@ main {
 
 // Popup
 @import "popup";
+
+// Pages
+@import "bacome-a-partner";
+@import "discover";
+@import "events";
+@import "event";
+@import "member";
+@import "blog";
+@import "article";
