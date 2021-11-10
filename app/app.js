@@ -152,4 +152,9 @@ if ($('.acc')) {
     });
 }
 
+
+$('.header-lang').click(function () {
+    $(this).toggleClass('active');
+})
+
 //$('.phone').mask('+38(999)-99-99-999');
