@@ -151,9 +151,10 @@ $(function() {
   if ($('.werden-txt').length) {
     $('.werden-txt').each(function() {
       var text = $(this).text();
-      if ($(this).text().length > 400) {
+      if ($(this).text().replace(/\s+/g, '').length > 320) {
         $(this).succinct({
-          size: 400
+          size: 320,
+          ignore: false
         });
         $('.werden__text-more').show();
       }
@@ -170,9 +171,10 @@ $(function() {
   if ($('.sie-item__text').length) {
     $('.sie-item__text').each(function() {
       var text = $(this).text();
-      if ($(this).text().length > 120) {
+      if ($(this).text().replace(/\s+/g, '').length > 110) {
         $(this).succinct({
-          size: 120
+          size: 110,
+          ignore: false
         });
         $(this).next('.sie-btn__more').show();
       }
