@@ -35,7 +35,6 @@
 
     & > .container .werden__text {
       margin: 0;
-      margin-bottom: 115px;
     }
 
     &__wrap {
@@ -64,6 +63,21 @@
       }
     }
 
+    &__text-wrapper{
+      margin-bottom: 115px;
+      p{
+        margin-bottom: 0;
+      }
+      span {
+        display: block;
+        color: $black;
+        cursor: pointer;
+        text-align: center;
+        &:hover{
+          color: $gold;
+        }
+      }
+    }
     &__text {
       margin: 0;
       max-width: 580px;
@@ -201,12 +215,26 @@
 
       &__icon {
         margin-bottom: 10px;
+        width: 50px;
+        height: 50px;
+        &.icon1{
+          background: url("../images/icons/sie-01.png") no-repeat center;
+          background-size: contain;
+        }
+        &.icon2{
+          background: url("../images/icons/sie-02.png") no-repeat center;
+          background-size: contain;
+        }
+        &.icon3{
+          background: url("../images/icons/sie-03.png") no-repeat center;
+          background-size: contain;
+        }
       }
       &__inner {
         flex-grow: 1;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        //justify-content: space-between;
       }
 
       &__title {
@@ -228,6 +256,10 @@
 
       &__text.bottom {
         color: $black;
+        cursor: pointer;
+        &:hover{
+          color: $gold;
+        }
       }
     }
   }
@@ -378,3 +410,4 @@
 
   // ===============
 }
+
