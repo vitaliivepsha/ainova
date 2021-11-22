@@ -1,39 +1,55 @@
 .main-section{
-  position: relative;
-  min-height: 900px;
-  @include bp(md){
-    min-height: unset;
-  }
-  >img{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .container{
-    padding-top: 122px;
-    position: relative;
-    z-index: 1;
-    @include bp(xs){
-      padding-top: 90px;
-    }
-  }
+  margin-top: 85px;
+  padding: 60px 0 75px;
+  overflow: hidden;
 }
 
 .main-wrap{
-  padding: 140px 0;
   display: flex;
-  align-items: center;
-  @include bp(md){
-    padding: 70px 0;
-  }
-  @include bp(xs){
-    padding: 35px 0;
+  @include bp(md) {
+    flex-direction: column;
   }
 }
 
 .main-info{
-  max-width: 590px;
+  width: 350px;
+  min-width: 350px;
+  padding-top: 196px;
+  background-color: #fff;
+  z-index: 3;
+  position: relative;
+  @include bp(md) {
+    padding-top: 0;
+    background: transparent;
+  }
+  @include bp(xs) {
+    width: 100%;
+    min-width: 100%;
+  }
+  &:before{
+    position: absolute;
+    content: '';
+    height: calc(100% + 120px);
+    top: -60px;
+    right: 100%;
+    width: 100vw;
+    background-color: #fff;
+    @include bp(md) {
+      display: none;
+    }
+  }
+  &:after{
+    position: absolute;
+    content: '';
+    height: 60px;
+    top: -60px;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    @include bp(md) {
+      display: none;
+    }
+  }
 }
 
 .main-title{
@@ -43,7 +59,7 @@
   line-height: 72px;
   font-weight: 700;
   margin-top: 0;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
   @include bp(md){
     font-size: 42px;
     line-height: 62px;
@@ -55,12 +71,268 @@
 }
 
 .main-txt{
-  max-width: 465px;
   font-size: 18px;
   line-height: 163.15%;
-  margin-bottom: 36px;
+  margin-bottom: 45px;
 }
 
 .main-btn{
-  width: 187px;
+  width: 132px;
+}
+
+.main-slider__wrapper{
+  width: 456px;
+  @include bp(md){
+    width: 100%;
+    margin: 0 -25px;
+    flex: auto;
+  }
+  @include bp(xs) {
+    margin: auto;
+  }
+}
+
+.main-slider{
+  height: 800px;
+  @include bp(md) {
+    width: 456px;
+  }
+  @include bp(xs) {
+    width: 100%;
+    height: auto;
+  }
+  .slick-list{
+    padding: 60px 5px;
+    overflow: visible;
+    height: 800px;
+    @include bp(xs) {
+      height: auto;
+      padding: 30px 0;
+    }
+  }
+  .slick-track{
+    margin: 0;
+    height: 680px;
+    transition: .700s linear !important;
+    @include bp(xs) {
+      height: auto;
+      transition: .5s linear !important;
+    }
+  }
+  .slick-slide{
+    padding: 0 15px;
+    height: 494px;
+    display: flex;
+    @include bp(xs) {
+      height: auto;
+      padding: 0;
+    }
+    >div{
+      display: flex !important;
+      height: 800px;
+      @include bp(xs) {
+        height: auto;
+      }
+    }
+    .slide{
+      width: 300px !important;
+      flex-direction: column;
+      transition: .3s linear;
+      position: relative;
+      display: flex !important;
+      margin-top: 47px;
+      @include bp(xs) {
+        margin-top: 0;
+        transition: unset;
+        width: 100% !important;
+      }
+      .main-slide__inner{
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      *{
+        transition: .3s linear;
+        @include bp(xs) {
+          transition: unset;
+        }
+      }
+    }
+    &.slick-current{
+      .slide{
+        width: 426px !important;
+        margin-top: 0;
+        @include bp(xs) {
+          width: 100% !important;
+        }
+        .main-slide__inner{
+          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+        }
+        .main-slide__pic{
+          height: 410px;
+          @include bp(xs) {
+            height: calc(88vw - 15px);
+          }
+          &:after{
+            opacity: 0;
+          }
+          img{
+            opacity: 1;
+          }
+        }
+        .main-slide__info{
+          height: 270px;
+          @include bp(xs) {
+            height: auto;
+          }
+        }
+        .main-slide__icon{
+          width: 120px;
+          height: 120px;
+          top: -60px;
+          @include bp(xs) {
+            width: 50px;
+            height: 50px;
+            right: 20px;
+            top: -25px;
+          }
+          &:after{
+            opacity: 0;
+          }
+        }
+      }
+    }
+  }
+  .slick-dots{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 100%;
+    display: flex;
+    justify-content: center;
+    li{
+      display: flex;
+      margin: 0 7px;
+      &.slick-active{
+        button{
+          background-color: $blue;
+        }
+      }
+      button{
+        font-size: 0;
+        padding: 0;
+        border: none;
+        background-color: $gold;
+        border-radius: 50%;
+        width: 15px;
+        height: 15px;
+      }
+    }
+  }
+}
+
+.main-slide__icon{
+  position: absolute;
+  right: 35px;
+  top: -35px;
+  width: 80px;
+  height: 80px;
+  filter: drop-shadow(0px 3.26px 16px #C0C0C1);
+  z-index: 2;
+  @include bp(xs) {
+    width: 50px;
+    height: 50px;
+    right: 20px;
+    top: -25px;
+  }
+  &:before{
+    position: absolute;
+    content: '';
+    z-index: 1;
+    border: 5px solid #fff;
+    border-radius: 50%;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    @include bp(xs) {
+      border-width: 3px;
+    }
+  }
+  &:after{
+    position: absolute;
+    content: '';
+    z-index: 2;
+    border-radius: 50%;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    opacity: .5;
+  }
+  img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.main-slide__pic{
+  height: 274px;
+  position: relative;
+  @include bp(xs) {
+    height: calc(88vw - 15px);
+  }
+  &:after{
+    position: absolute;
+    content: '';
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    opacity: .22;
+  }
+  img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: .3;
+  }
+}
+
+.main-slide__info{
+  height: 183px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 30px;
+  color: $blue;
+  @include bp(xs) {
+    height: auto;
+    padding: 15px;
+  }
+  span{
+    display: block;
+    font-family: $title;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 33px;
+    margin-bottom: 20px;
+    @include bp(xs) {
+      font-size: 18px;
+      line-height: 24px;
+      margin-bottom: 12px;
+    }
+  }
+  p{
+    font-size: 18px;
+    line-height: 163.15%;
+    margin-bottom: 0;
+    @include bp(xs) {
+      font-size: 14px;
+    }
+  }
 }
