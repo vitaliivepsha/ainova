@@ -121,10 +121,10 @@
   .slick-track{
     margin: 0;
     height: 680px;
-    transition: .700s linear !important;
+    //transition: .700s linear !important;
     @include bp(xs) {
       height: auto;
-      transition: .5s linear !important;
+      //transition: .5s linear !important;
     }
   }
   .slick-slide{
