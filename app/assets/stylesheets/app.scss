@@ -122,6 +122,8 @@ main {
   max-width: 100vw;
   max-height: 100vh;
   backdrop-filter: blur(3px);
+  -moz-backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
   background: transparent;
   transition: linear 0.3s;
 }

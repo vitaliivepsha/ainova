@@ -1,13 +1,21 @@
 .main-section{
   margin-top: 85px;
-  padding: 60px 0 75px;
+  padding: 60px 0;
   overflow: hidden;
 }
 
 .main-wrap{
   display: flex;
+  width: 1210px;
+  overflow: hidden;
+  @include bp(lg) {
+    overflow: visible;
+  }
   @include bp(md) {
     flex-direction: column;
+  }
+  @include bp(xs) {
+    width: 100%;
   }
 }
 
@@ -102,7 +110,7 @@
     height: auto;
   }
   .slick-list{
-    padding: 60px 5px;
+    padding: 60px 5px 75px;
     overflow: visible;
     height: 800px;
     @include bp(xs) {
@@ -132,10 +140,11 @@
       height: 800px;
       @include bp(xs) {
         height: auto;
+        width: 100%;
       }
     }
     .slide{
-      width: 300px !important;
+      width: 374px !important;
       flex-direction: column;
       transition: .3s linear;
       position: relative;
@@ -207,9 +216,12 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: 100%;
+    bottom: 0;
     display: flex;
     justify-content: center;
+    @include bp(xs) {
+      bottom: -10px;
+    }
     li{
       display: flex;
       margin: 0 7px;
@@ -279,7 +291,7 @@
 }
 
 .main-slide__pic{
-  height: 274px;
+  height: 338px;
   position: relative;
   @include bp(xs) {
     height: calc(88vw - 15px);
@@ -304,7 +316,7 @@
 }
 
 .main-slide__info{
-  height: 183px;
+  height: 210px;
   background-color: #fff;
   display: flex;
   align-items: center;

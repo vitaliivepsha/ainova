@@ -32,6 +32,7 @@
   border-radius: 8px;
   overflow: hidden;
   height: 565px;
+  width: 100%;
   @include bp(md){
     margin-bottom: 40px;
   }

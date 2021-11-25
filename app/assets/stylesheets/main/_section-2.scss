@@ -159,6 +159,7 @@
 .section-produkten{
   position: relative;
   min-height: 614px;
+  overflow: hidden;
   margin-bottom: 120px;
   padding: 60px 0;
   display: flex;
@@ -175,8 +176,10 @@
     transform: translateX(-50%);
     top: 0;
     width: 100%;
-    height: 100%;
     object-fit: cover;
+    @include bp(xxl) {
+      height: 100%;
+    }
     @include bp(sm) {
       opacity: .5;
     }
