@@ -147,7 +147,7 @@
     padding-left: 16px;
     padding-right: 56px;
     &::placeholder{
-      color: $gold;
+      color: #6d7d8b;
     }
     &:focus{
       &::placeholder{
@@ -165,6 +165,11 @@
     position: absolute;
     border: none;
     background-color: transparent;
+    svg{
+      path{
+        fill: #6d7d8b;
+      }
+    }
     &:hover{
       svg{
         path{
