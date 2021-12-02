@@ -190,6 +190,26 @@ $(function() {
       });
     });
   }
+
+  if ($('.produkts-slide__text').length) {
+    $('.produkts-slide__text').each(function() {
+      var text = $(this).text();
+      if ($(this).text().replace(/\s+/g, '').length > 110) {
+        $(this).succinct({
+          size: 110,
+          ignore: false
+        });
+        $(this).next('.produkts-slide__more').show();
+      }
+      else {
+        $(this).next('.produkts-slide__more').hide();
+      }
+      $(this).next('.produkts-slide__more').click(function() {
+        $(this).hide();
+        $(this).closest('.produkts-slide__about').find('.produkts-slide__text').html(text);
+      });
+    });
+  }
 });
 
 // video

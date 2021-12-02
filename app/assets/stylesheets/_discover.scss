@@ -169,7 +169,6 @@
       position: relative;
       // padding-left: 170px;
       min-height: 610px;
-
       & .slick-track {
         display: flex;
         justify-content: center;
@@ -182,9 +181,13 @@
           // padding-left: 70px;
         }
         @media (max-width: 1170px) {
-          display: block;
+          justify-content: flex-start;
           // padding-left: 0;
         }
+      }
+
+      & .slick-list {
+        padding: 30px 0;
       }
 
       @media (max-width: 1000px) {
@@ -201,11 +204,15 @@
       & .slick-slide {
         width: auto;
         max-width: 325px !important;
+        height: inherit;
+        >div{
+          height: 100%;
+        }
       }
 
       & .slick-arrow {
         position: absolute;
-        bottom: -25px;
+        bottom: -55px;
         border: none;
         background-color: transparent;
         font-size: 0;
@@ -213,10 +220,6 @@
         height: 55px;
         background-repeat: no-repeat;
         background-position: center;
-
-        @media (max-width: 740px) {
-          bottom: 0;
-        }
 
         &.slick-disabled {
           opacity: 0.5;
@@ -239,13 +242,15 @@
       // slide
       & .produkts-slide {
         box-shadow: 0px 4px 30px rgba(#000, 0.15);
-        margin: 30px;
+        margin: 0 30px;
         width: 300px !important;
         min-height: 400px !important;
         border-radius: 8px;
         overflow: hidden;
+        height: 100%;
         @media (max-width: 480px) {
           width: 280px !important;
+          margin: 0 15px;
         }
 
         &__img {
@@ -263,6 +268,7 @@
           padding-bottom: 20px;
           text-align: center;
           background-color: $beige;
+          height: calc(100% - 300px);
         }
 
         &__title {
@@ -274,12 +280,19 @@
         }
 
         &__text {
-          margin: 0;
           margin: 0 auto;
           max-width: 240px;
           font-weight: 600;
-
           color: $blue;
+        }
+
+        &__more {
+          margin-top: 7px;
+          font-size: 18px;
+          line-height: 29px;
+          font-weight: 400;
+          color: $black;
+          cursor: pointer;
         }
       }
     }
